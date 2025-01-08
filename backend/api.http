@@ -1,0 +1,9 @@
+POST http://127.0.0.1:8000/pathfinder/validate
+Content-Type: application/json
+
+{
+  "graph_id": 1,
+  "path": [0, 1, 2]
+}
+
+
