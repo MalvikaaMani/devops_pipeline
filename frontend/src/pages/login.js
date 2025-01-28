@@ -10,20 +10,14 @@ function Login() {
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
-  const formatDate = (date) => {
-    const [year, month, day] = date.split('-');
-    return `${day}/${month}/${year}`;
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formattedDob = formatDate(dob);
     const response = await fetch('http://127.0.0.1:8000/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username, date_of_birth: formattedDob }),
+      body: JSON.stringify({ username, date_of_birth: dob }),
     });
     const data = await response.json();
     if (data.success) {
