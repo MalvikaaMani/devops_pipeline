@@ -28,6 +28,7 @@ function Warshall() {
   const displayRandomMatrix = () => {
     const randomMatrix = jsonData.matrices[Math.floor(Math.random() * jsonData.matrices.length)];
     setCurrentMatrix(randomMatrix);
+    setUserMatrix(randomMatrix.data.map(row => row.slice())); // Initialize userMatrix with the same structure
   };
 
   const warshallAlgorithm = (matrix) => {
@@ -47,8 +48,19 @@ function Warshall() {
 
   const handleUpdateButtonClick = () => {
     const correctMatrix = warshallAlgorithm(currentMatrix.data);
+    let isCorrect = true;
 
-    if (JSON.stringify(userMatrix) === JSON.stringify(correctMatrix)) {
+    for (let i = 0; i < correctMatrix.length; i++) {
+      for (let j = 0; j < correctMatrix[i].length; j++) {
+        if (userMatrix[i][j] !== correctMatrix[i][j]) {
+          isCorrect = false;
+          break;
+        }
+      }
+      if (!isCorrect) break;
+    }
+
+    if (isCorrect) {
       setFeedback('Correct! Well done!');
     } else {
       setFeedback('Wrong answer, try again!');
