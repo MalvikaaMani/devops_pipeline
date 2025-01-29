@@ -7,14 +7,6 @@ import Relation from './relation';
 
 function Main() {
   const [activeComponent, setActiveComponent] = useState(null);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
-    if (!isLoggedIn) {
-      navigate('/login');
-    }
-  }, [navigate]);
 
   const handleButtonClick = (component) => {
     setActiveComponent(component);
