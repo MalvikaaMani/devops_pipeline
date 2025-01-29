@@ -24,4 +24,4 @@ async def validate_relation(request: RelationValidationRequest):
     user_response = [request.reflexive, request.symmetric, request.transitive]
     is_correct = user_response == expected_result
 
-    return {"correct": is_correct}
+    return {"correct": is_correct, "correct_answers": expected_result}
