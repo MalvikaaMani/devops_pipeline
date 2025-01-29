@@ -8,9 +8,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Welcome to KLM GameCraft</h1>
+        <h1>Welcome to KLM GameCraft!!</h1>
+        <h3 className="subheading">Your gateway to an immersive gaming experience.</h3>
         {showLogin && <Login />}
       </header>
+      
     </div>
   );
 }

@@ -1,3 +1,4 @@
+app.css
 .App {
   text-align: center;
 }
@@ -14,14 +15,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color:  #7D9A6B;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .App-link {
@@ -30,7 +31,7 @@
 
 /* Colors for the login component */
 .login-container {
-  background-color: #f0f0f0;
+  background-color: rgb(45, 37, 37);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -54,4 +55,8 @@
 
 .login-button:hover {
   background-color: #21a1f1;
+}
+.subheading{
+  font-size: 18px;
+  color:black;
 }
