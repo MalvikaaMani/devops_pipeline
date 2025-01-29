@@ -6,7 +6,7 @@ from models.question_model import Question
 router = APIRouter()
 
 @router.get("/", response_model=Question)
-def fetch_random_question():
+async def fetch_random_question():
     """Fetch a random question from the Pathfinder database."""
     questions_data = pathfinder_db.get_questions()
     if not questions_data:

@@ -1,0 +1,64 @@
+### Get Pathfinder Questions.
+GET http://127.0.0.1:8000/pathfinder/question/
+
+### Validate Pathfinder Answer.
+POST http://localhost:8000/pathfinder/validate/
+Content-Type: application/json
+
+{
+  "id": 12,
+  "matrix": [
+    [0, 1, 1, 0, 1, 0, 0, 0],
+    [0, 0, 0, 1, 0, 1, 0, 0],
+    [1, 0, 0, 0, 1, 0, 1, 0],
+    [0, 1, 0, 0, 0, 1, 0, 1],
+    [1, 0, 1, 0, 0, 0, 1, 0],
+    [0, 1, 0, 1, 0, 0, 0, 1],
+    [1, 0, 0, 0, 1, 0, 0, 0],
+    [0, 0, 1, 0, 0, 1, 0, 0]
+    ]
+}
+
+### Validate Pathfinder Answer (False).
+POST http://localhost:8000/pathfinder/validate/
+Content-Type: application/json
+
+{
+  "id": 12,
+  "matrix": [
+    [1, 1, 1, 1, 1, 1, 1, 0],
+    [0, 0, 0, 1, 0, 1, 0, 0],
+    [1, 0, 0, 0, 1, 0, 1, 0],
+    [0, 1, 0, 0, 0, 1, 0, 1],
+    [1, 0, 1, 0, 0, 0, 1, 0],
+    [0, 1, 0, 1, 0, 0, 0, 1],
+    [1, 0, 0, 0, 1, 0, 0, 0],
+    [0, 0, 1, 0, 0, 1, 0, 0]
+    ]
+}
+
+### Get Relation Questions.
+GET http://127.0.0.1:8000/relation/question/
+
+### Validate Relation Answer.
+POST http://localhost:8000/relation/validate/validate_relation/
+Content-Type: application/json
+
+{
+  "question_id": 16,
+  "reflexive": false,
+  "symmetric": false,
+  "transitive": true
+}
+
+
+### Validate Relation Answer (False).
+POST http://localhost:8000/relation/validate/validate_relation/
+Content-Type: application/json
+
+{
+  "question_id": 16,
+  "reflexive": false,
+  "symmetric": false,
+  "transitive": false
+}

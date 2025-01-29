@@ -5,7 +5,7 @@ from models.question_model import ValidationRequest
 router = APIRouter()
 
 @router.post("/")
-def validate_matrix(data: ValidationRequest):
+async def validate_matrix(data: ValidationRequest):
     """Validate the user's submitted matrix."""
     question = pathfinder_db.get_question_by_id(data.id)
     if not question:

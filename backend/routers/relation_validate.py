@@ -11,7 +11,7 @@ class RelationValidationRequest(BaseModel):
     transitive: bool
 
 @router.post("/validate_relation")
-def validate_relation(request: RelationValidationRequest):
+async def validate_relation(request: RelationValidationRequest):
     question = relation_db.get_question_by_id(request.question_id)
     
     if not question:
