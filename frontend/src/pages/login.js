@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
 
@@ -7,6 +7,13 @@ function Login({ onLogin }) {
   const [dob, setDob] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (isLoggedIn === 'true') {
+      navigate('/main');
+    }
+  }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,6 +26,7 @@ function Login({ onLogin }) {
     });
     const data = await response.json();
     if (data.success) {
+      localStorage.setItem('isLoggedIn', 'true');
       onLogin();
       setErrorMessage('');
       navigate('/main');

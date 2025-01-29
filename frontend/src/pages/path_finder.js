@@ -7,7 +7,7 @@ import './path_finder.css'; // Assuming you have a CSS file for PathFinder
 const BASE_URL = "http://127.0.0.1:8000";
 
 async function fetchRandomQuestion() {
-  const response = await fetch(`${BASE_URL}/question/`);
+  const response = await fetch(`${BASE_URL}/pathfinder/question`);
   if (!response.ok) {
     throw new Error("Failed to fetch question");
   }
@@ -15,7 +15,7 @@ async function fetchRandomQuestion() {
 }
 
 async function validateMatrix(id, matrix) {
-  const response = await fetch(`${BASE_URL}/validate/`, {
+  const response = await fetch(`${BASE_URL}/pathfinder/validate`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
