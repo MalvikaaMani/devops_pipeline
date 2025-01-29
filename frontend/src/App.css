@@ -1,22 +1,10 @@
-app.css
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color:  #7D9A6B;
-  min-height: 100vh;
+  background-color: #7D9A6B;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,8 +13,37 @@ app.css
   color: black;
 }
 
-.App-link {
-  color: #61dafb;
+.subheading {
+  margin-bottom: 20px;
+}
+
+.App-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%; /* Increase width to 90% */
+  max-width: 2200px;
+  height: calc(100vh - 100px); /* Adjust height to fit the screen */
+  overflow: auto; /* Ensure content is scrollable if it overflows */
+  padding-top: 20px;
+}
+
+.toggle-button-container {
+  margin-top: 20px; /* Add space above the toggle button */
+}
+
+.toggle-button {
+  background-color: #61dafb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;  
+}
+
+.toggle-button:hover {
+  background-color: #21a1f1;
 }
 
 /* Colors for the login component */
@@ -55,8 +72,4 @@ app.css
 
 .login-button:hover {
   background-color: #21a1f1;
-}
-.subheading{
-  font-size: 18px;
-  color:black;
 }

@@ -1,0 +1,63 @@
+.graph-visualizer-container {
+    background: linear-gradient(to bottom right, rgb(255, 183, 138), rgb(142, 255, 206)); /* Gradient background */
+    padding: 20px; /* Optional padding */
+    border-radius: 8px; /* Optional rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional shadow for the container */
+}
+
+.graph-svg {
+    border: 1px solid #ccc; /* Light gray border color */
+    background-color: transparent; /* Make the canvas background transparent */
+    margin: 20px auto; /* Space around the canvas */
+    width: 90%; /* Make the canvas responsive */
+    max-width: 600px; /* Limit the maximum width */
+    height: 400px; /* Set a fixed height for the canvas */
+}
+  
+.node {
+    cursor: pointer;
+    stroke: #50fa7b; /* Node stroke color */
+    stroke-width: 2;
+    fill: #ff79c6; /* Node fill color for better visibility */
+    transition: transform 0.2s ease, fill 0.3s ease; /* Transition for node */
+}
+  
+.node:hover {
+    fill: #bd93f9; /* Node hover color */
+    transform: scale(1.1); /* Scale effect on hover */
+}
+  
+.line {
+    stroke: #bd93f9; /* Line color */
+    stroke-width: 2;
+    stroke-linecap: round;
+    transition: stroke 0.3s ease; /* Transition for line */
+}
+  
+.line:hover {
+    stroke: #50fa7b; /* Change color on hover */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); /* Shadow effect on hover */
+}
+  
+.button-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the buttons horizontally */
+    margin-top: 20px; /* Space above the buttons */
+}
+  
+button {
+    background-color: rgb(14, 14, 120); /* Dark blue button background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effect */
+    margin: 0 10px; /* Space between buttons */
+}
+  
+button:hover {
+    background-color: #45e62f; /* Darker green on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+  

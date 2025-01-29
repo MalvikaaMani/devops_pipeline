@@ -75,6 +75,7 @@ function Warshall() {
 
   return (
     <div className="container">
+      <h1>Warshall</h1>
       <h2>Question Matrix</h2>
       <div id="matrixContainer">
         {currentMatrix && (

@@ -1,0 +1,126 @@
+body {
+  background: linear-gradient(to bottom, #7D9A6B, #2A3424); /* Background gradient */
+  color: #333; /* General text color */
+  margin: 0; /* Remove default margin */
+  font-family: 'Arial', sans-serif; /* Set a default font */
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150vh;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  background: #FFFFCC;
+  padding: 50px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'courier';
+}
+
+.question-container {
+  margin: 20px; /* Space around the question container */
+  text-align: center; /* Center the text */
+  color: #fff; /* Matrix heading color */
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Matrix heading shadow */
+  background-color: transparent; /* Ensure the outer background is transparent */
+  width: 45%; /* Set width for the question container */
+  max-width: 300px; /* Limit the maximum width */
+}
+
+.table-container {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: row; /* Display items in a row */
+  justify-content: space-between; /* Space between items */
+  align-items: flex-start; /* Align items at the start */
+  margin: 20px 0; /* Space around the table */
+  width: 100%;
+}
+
+table {
+  border: 2px solid #ccc; /* Light gray border color for the table */
+  border-radius: 8px; /* Rounded corners for the table */
+  overflow: hidden; /* Ensure rounded corners are visible */
+  margin: 0; /* Remove margin */
+  background-color: #fff; /* Set background color of the table to white */
+  width: 100%; /* Make the table responsive */
+  height: auto; /* Allow height to adjust */
+}
+
+td {
+  border: 1px solid #ccc; /* Light gray cell border color */
+  padding: 10px; /* Increased padding for cells */
+  text-align: center;
+  background-color: #555; /* Medium gray background for cells */
+  color: #fff; /* Change text color to white for better visibility */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+td:hover {
+  background-color: #50fa7b; /* Change color on hover */
+}
+
+.button-container {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center the buttons horizontally */
+  margin-top: 20px; /* Space above the buttons */
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+button {
+  background-color: rgb(14, 14, 120); /* Dark blue button background color */
+  color: #fff; /* White text color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 15px; /* Padding for buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  margin: 0 10px; /* Space between buttons */
+  flex: 1 1 150px; /* Allow buttons to grow and shrink */
+}
+
+button:hover {
+  background-color: #45e62f; /* Darker green on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 10px; /* Reduce padding on smaller screens */
+  }
+
+  table {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  button {
+    flex: 1 1 100%; /* Stack buttons on smaller screens */
+    margin: 5px 0; /* Space between stacked buttons */
+  }
+
+  .table-container {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center; /* Center the items */
+  }
+
+  .question-container,
+  .graph-svg {
+    width: 90%; /* Full width on smaller screens */
+    max-width: none; /* Remove max-width on smaller screens */
+  }
+}
+
+.graph-svg {
+  border: 1px solid #ccc; /* Light gray border color */
+  background-color: #282a36; /* Dracula background color */
+  margin: 20px; /* Space around the canvas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for the canvas */
+  width: 45%; /* Set width for the graph */
+  max-width: 300px; /* Limit the maximum width */
+  height: 300px; /* Set a fixed height for the canvas */
+}

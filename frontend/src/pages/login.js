@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Main from './main';
 import './login.css';
 
-function Login() {
+function Login({ onLogin }) {
   const [username, setUsername] = useState('');
   const [dob, setDob] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
@@ -21,17 +19,13 @@ function Login() {
     });
     const data = await response.json();
     if (data.success) {
-      setIsLoggedIn(true);
+      onLogin();
       setErrorMessage('');
       navigate('/main');
     } else {
       setErrorMessage('Invalid username or date of birth');
     }
   };
-
-  if (isLoggedIn) {
-    return <Main />;
-  }
 
   return (
     <div className="login-container">
