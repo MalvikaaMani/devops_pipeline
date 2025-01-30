@@ -1,4 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./GraphVisualizer.css";
 
 function GraphVisualizer({ nodes, questionMatrix, submitMatrix }) {
@@ -49,6 +51,14 @@ function GraphVisualizer({ nodes, questionMatrix, submitMatrix }) {
       setUserMatrix((prev) => {
         const newMatrix = prev.map((row) => [...row]);
         newMatrix[draggingFromNode.index][targetNode.index] = 1;
+
+        // Check if the connection is correct based on the question matrix
+        if (questionMatrix[draggingFromNode.index][targetNode.index] === 1) {
+          toast.success("Correct connection!");
+        } else {
+          toast.error("Incorrect connection!");
+        }
+
         return newMatrix;
       });
     }
@@ -196,6 +206,7 @@ function GraphVisualizer({ nodes, questionMatrix, submitMatrix }) {
         <button onClick={handleSubmit}>Submit Matrix</button>
         <button onClick={handleUndo}>Undo</button>
       </div>
+      <ToastContainer />
     </div>
   );
 }

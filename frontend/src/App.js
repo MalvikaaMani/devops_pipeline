@@ -24,6 +24,9 @@ function App() {
   const toggleLogin = () => setShowLogin((prev) => !prev); // Toggle the showLogin state
 
   const renderComponent = () => {
+    if (showLogin) {
+      return <Login onLogin={handleLogin} />;
+    }
     switch (activeComponent) {
       case 'Main':
         return <Main onComponentChange={handleComponentChange} />;
@@ -44,17 +47,14 @@ function App() {
         <h1>Welcome to KLM GameCraft!!</h1>
         <h3 className="subheading">Your gateway to an immersive gaming experience.</h3>
         <div className="toggle-button-container">
-          <button className="toggle-button" onClick={toggleLogin}>Toggle Login</button>
+          <button className="toggle-button" onClick={toggleLogin}>Login</button>
         </div>
       </div>
       <div className="App-body">
         {/* Show Login or Main component based on the state */}
-        {showLogin ? renderComponent() : <Main onComponentChange={handleComponentChange} />}
-        
-        {/* Toggle button to show/hide Login */}
+        {renderComponent()}
       </div>
     </div>
-    
   );
 }
 
